@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Back Exercises | Fitness & Gym</title>
+
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--text:#fff;--sub:#cbd5f5;--accent:#38bdf8}
+#theme:checked~.page{--bg:#f8fafc;--card:#fff;--text:#020617;--sub:#334155;--accent:#0284c7}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:var(--bg);color:var(--text)}
+.toggle{position:fixed;top:20px;right:30px}
+.toggle label{cursor:pointer;padding:8px 14px;background:var(--card);border-radius:20px}
+.section{padding:60px 10%}
+h1{text-align:center;color:var(--accent);font-size:42px}
+.subtitle{text-align:center;margin:10px 0 40px;color:var(--sub)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.card{background:var(--card);border-radius:15px;overflow:hidden;box-shadow:0 10px 20px rgba(0,0,0,.3)}
+.card img{width:100%;height:180px;object-fit:cover}
+.content{padding:20px}
+.card h3{color:var(--accent)}
+.card p{color:var(--sub)}
+.tag{margin-top:8px;display:inline-block;padding:5px 12px;border-radius:20px;font-size:12px;background:rgba(56,189,248,.2)}
+</style>
+</head>
+
+<body>
+<input type="checkbox" id="theme" hidden>
+<div class="toggle"><label for="theme">🌙 / ☀️</label></div>
+
+<div class="page">
+<section class="section">
+<h1>Back Exercises</h1>
+<p class="subtitle">Build a strong and wide back</p>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://via.placeholder.com/400x250?text=Pull+Ups">
+<div class="content">
+<h3>Pull-Ups</h3>
+<p>Target: Lats</p>
+<p>Equipment: Bodyweight</p>
+<span class="tag">Bodyweight</span>
+</div>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/400x250?text=Lat+Pulldown">
+<div class="content">
+<h3>Lat Pulldown</h3>
+<p>Target: Lats</p>
+<p>Equipment: Machine</p>
+<span class="tag">Machine</span>
+</div>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/400x250?text=Barbell+Row">
+<div class="content">
+<h3>Barbell Row</h3>
+<p>Target: Upper Back</p>
+<p>Equipment: Barbell</p>
+<span class="tag">Compound</span>
+</div>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/400x250?text=Deadlift">
+<div class="content">
+<h3>Deadlift</h3>
+<p>Target: Full Back</p>
+<p>Equipment: Barbell</p>
+<span class="tag">Power</span>
+</div>
+</div>
+
+</div>
+</section>
+</div>
+</body>
+</html>

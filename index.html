@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        
+        nav a:hover {
+            color: #4CAF50;
+        }
+        
+        main {
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">MyWebsite</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <a href="#blog">Blog</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#team">Team</a>
+            <a href="#faq">FAQ</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#support">Support</a>
+        </nav>
+    </header>
+    <main>
+        <section style="position: relative; height: 500px; background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=500&fit=crop') center/cover no-repeat; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+            <div style="background: rgba(0, 0, 0, 0.5); padding: 30px; border-radius: 8px; text-align: center;">
+                <h2 style="color: white; margin-bottom: 20px; font-size: 28px;">Find Your Fitness</h2>
+                <input type="text" placeholder="Search for classes, trainers, or programs..." style="width: 350px; padding: 12px 20px; font-size: 16px; border: none; border-radius: 5px; outline: none;">
+                <button style="padding: 12px 30px; margin-left: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: 0.3s;">Search</button>
+            </div>
+        </section>
+    </main>
+    
+</body>
+<section style="padding: 40px 20px; background-color: white;">
+    <h3 style="text-align: center; margin-bottom: 40px; font-size: 24px; color: #333;">Popular Exercises</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+        <a href="chest.html" style="text-decoration: none;">
+            <div style="background: url('https://www.simplefitnesshub.com/wp-content/uploads/2018/06/best_chest_workout_at_home_001-1024x683.jpg') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
+            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Chest</p>
+        </a>
+        <a href="back.html" style="text-decoration: none;">
+            <div style="background: url('https://imgcdn.stablediffusionweb.com/2025/1/4/4d7e24d5-c0c7-451c-8b86-a39c2cbc3d1b.jpg') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
+            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Back</p>
+        </a>
+        <a href="shoulder.html" style="text-decoration: none;">
+            <div style="background: url('https://fitnessfit.com.au/wp-content/uploads/2022/10/Muscle-include-in-shoulder-workout.jpg') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
+            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Shoulder</p>
+        </a>
+        <a href="#bicep" style="text-decoration: none;">
+            <div style="background: url('https://thumbs.dreamstime.com/b/focused-muscular-young-man-doing-bicep-curl-tranquil-concentrated-male-athlete-raising-dumbbell-one-hand-seated-position-239069847.jpg') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
+            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Bicep</p>
+        </a>
+        <a href="#triceps" style="text-decoration: none;">
+            <div style="background: url('https://staticg.sportskeeda.com/editor/2022/07/dec81-16580627015252-1920.jpg') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
+            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Triceps</p>
+        </a>
+        <a href="legs.html" style="text-decoration: none;">
+            <div style="background: url('https://cdn.shopify.com/s/files/1/0504/5357/7879/files/CBHTBM-Legs.png?v=1716368126') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
+            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Legs</p>
+        </a>
+        <a href="#abs" style="text-decoration: none;">
+            <div style="background: url('https://i.pinimg.com/originals/c9/dd/3b/c9dd3bc26e74f2ecdbcd260e62615e87.png') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
+            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Abs</p>
+        </a>
+        <a href="#cardio" style="text-decoration: none;">
+            <div style="background: url('https://c.stocksy.com/a/sDhF00/z9/3741072.jpg') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
+            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Cardio</p>
+        </a>
+        <a href="#yoga" style="text-decoration: none;">
+            <div style="background: url('https://static.vecteezy.com/system/resources/previews/013/504/703/large_2x/totally-relaxed-young-man-doing-yoga-while-sitting-in-lotus-position-at-home-photo.jpg') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
+            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Yoga</p>
+        </a>
+    </div>
+</section>
+<section style="padding: 40px 20px; background: linear-gradient(135deg, #f5f5f5 0%, #e8f5e9 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center; padding: 20px 0;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 250px;">
+                <div style="font-size: 48px; margin-bottom: 15px;">📊</div>
+                <h3 style="color: #333; margin-bottom: 10px;">Transform Your Body</h3>
+                <p style="color: #666; font-size: 16px;">See real results with science-backed nutrition</p>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <div style="font-size: 48px; margin-bottom: 15px;">⭐</div>
+                <h3 style="color: #333; margin-bottom: 10px;">Expert Plans</h3>
+                <p style="color: #666; font-size: 16px;">Created by certified nutritionists</p>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <div style="font-size: 48px; margin-bottom: 15px;">🎯</div>
+                <h3 style="color: #333; margin-bottom: 10px;">Personalized Approach</h3>
+                <p style="color: #666; font-size: 16px;">Tailored to your unique fitness goals</p>
+            </div>
+        </div>
+    </div>
+    <h3 style="text-align: center; margin-bottom: 40px; font-size: 24px; color: #333;">Nutrition & Diet Plans</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+        <div style="background: linear-gradient(135deg, #ffffff 0%, #f1f8f6 100%); border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; border-top: 4px solid #4CAF50;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+            <h4 style="color: #4CAF50; margin-bottom: 12px; font-size: 20px;">🥗 Balanced Diet</h4>
+            <p style="color: #666; margin-bottom: 15px; line-height: 1.6;">Complete nutrition plan with proper carbs, proteins, and fats for optimal health and energy.</p>
+            <ul style="list-style: none; color: #555; font-size: 14px;">
+                <li style="margin-bottom: 8px;">✓ Calorie tracking</li>
+                <li style="margin-bottom: 8px;">✓ Meal prep guides</li>
+                <li style="margin-bottom: 8px;">✓ Weekly menus</li>
+                <li style="margin-bottom: 8px;">✓ Shopping lists</li>
+            </ul>
+            <button style="width: 100%; padding: 12px; margin-top: 15px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;" onmouseover="this.style.backgroundColor='#45a049';" onmouseout="this.style.backgroundColor='#4CAF50';">Learn More</button>
+        </div>
+        <div style="background: linear-gradient(135deg, #ffffff 0%, #fff3e0 100%); border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; border-top: 4px solid #FF9800;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+            <h4 style="color: #FF9800; margin-bottom: 12px; font-size: 20px;">⚡ Weight Loss Plan</h4>
+            <p style="color: #666; margin-bottom: 15px; line-height: 1.6;">Healthy calorie deficit diet designed to help you lose weight safely and sustainably.</p>
+            <ul style="list-style: none; color: #555; font-size: 14px;">
+                <li style="margin-bottom: 8px;">✓ Low-calorie recipes</li>
+                <li style="margin-bottom: 8px;">✓ Progress tracking</li>
+                <li style="margin-bottom: 8px;">✓ Expert guidance</li>
+                <li style="margin-bottom: 8px;">✓ Support community</li>
+            </ul>
+            <button style="width: 100%; padding: 12px; margin-top: 15px; background-color: #FF9800; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;" onmouseover="this.style.backgroundColor='#e68900';" onmouseout="this.style.backgroundColor='#FF9800';">Learn More</button>
+        </div>
+        <div style="background: linear-gradient(135deg, #ffffff 0%, #f3e5f5 100%); border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; border-top: 4px solid #9C27B0;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+            <h4 style="color: #9C27B0; margin-bottom: 12px; font-size: 20px;">💪 Muscle Building</h4>
+            <p style="color: #666; margin-bottom: 15px; line-height: 1.6;">High-protein nutrition plans designed to maximize muscle growth and strength gains.</p>
+            <ul style="list-style: none; color: #555; font-size: 14px;">
+                <li style="margin-bottom: 8px;">✓ High-protein meals</li>
+                <li style="margin-bottom: 8px;">✓ Supplement guides</li>
+                <li style="margin-bottom: 8px;">✓ Pre/post workouts</li>
+                <li style="margin-bottom: 8px;">✓ Macro calculator</li>
+            </ul>
+            <button style="width: 100%; padding: 12px; margin-top: 15px; background-color: #9C27B0; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;" onmouseover="this.style.backgroundColor='#7b1fa2';" onmouseout="this.style.backgroundColor='#9C27B0';">Learn More</button>
+        </div>
+        <div style="background: linear-gradient(135deg, #ffffff 0%, #e8f5e9 100%); border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; border-top: 4px solid #00BCD4;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+            <h4 style="color: #00BCD4; margin-bottom: 12px; font-size: 20px;">🌿 Vegan & Vegetarian</h4>
+            <p style="color: #666; margin-bottom: 15px; line-height: 1.6;">Plant-based nutrition plans with all essential nutrients for a healthy lifestyle.</p>
+            <ul style="list-style: none; color: #555; font-size: 14px;">
+                <li style="margin-bottom: 8px;">✓ Plant-based recipes</li>
+                <li style="margin-bottom: 8px;">✓ Protein sources</li>
+                <li style="margin-bottom: 8px;">✓ Nutrient tracking</li>
+                <li style="margin-bottom: 8px;">✓ Meal planning</li>
+            </ul>
+            <button style="width: 100%; padding: 12px; margin-top: 15px; background-color: #00BCD4; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;" onmouseover="this.style.backgroundColor='#0097a7';" onmouseout="this.style.backgroundColor='#00BCD4';">Learn More</button>
+        </div>
+        <div style="background: linear-gradient(135deg, #ffffff 0%, #fce4ec 100%); border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; border-top: 4px solid #E91E63;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+            <h4 style="color: #E91E63; margin-bottom: 12px; font-size: 20px;">🔥 Keto Diet</h4>
+            <p style="color: #666; margin-bottom: 15px; line-height: 1.6;">Low-carb ketogenic diet plan for rapid fat loss and improved mental clarity.</p>
+            <ul style="list-style: none; color: #555; font-size: 14px;">
+                <li style="margin-bottom: 8px;">✓ Keto recipes</li>
+                <li style="margin-bottom: 8px;">✓ Macro calculations</li>
+                <li style="margin-bottom: 8px;">✓ Food list guide</li>
+                <li style="margin-bottom: 8px;">✓ Ketone tracking</li>
+            </ul>
+            <button style="width: 100%; padding: 12px; margin-top: 15px; background-color: #E91E63; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;" onmouseover="this.style.backgroundColor='#c2185b';" onmouseout="this.style.backgroundColor='#E91E63';">Learn More</button>
+        </div>
+        <div style="background: linear-gradient(135deg, #ffffff 0%, #ede7f6 100%); border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; border-top: 4px solid #673AB7;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
+            <h4 style="color: #673AB7; margin-bottom: 12px; font-size: 20px;">👨‍⚕️ Consult Nutritionist</h4>
+            <p style="color: #666; margin-bottom: 15px; line-height: 1.6;">Get personalized diet plans from certified nutritionists tailored to your health goals.</p>
+            <ul style="list-style: none; color: #555; font-size: 14px;">
+                <li style="margin-bottom: 8px;">✓ One-on-one sessions</li>
+                <li style="margin-bottom: 8px;">✓ Custom meal plans</li>
+                <li style="margin-bottom: 8px;">✓ Health assessment</li>
+                <li style="margin-bottom: 8px;">✓ Ongoing support</li>
+            </ul>
+            <button style="width: 100%; padding: 12px; margin-top: 15px; background-color: #673AB7; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;" onmouseover="this.style.backgroundColor='#512da8';" onmouseout="this.style.backgroundColor='#673AB7';">Book Now</button>
+        </div>
+    </div>
+</section>
+
+<section style="padding: 40px 20px; background-color: white; margin-top: 40px;">
+    <h3 style="text-align: center; margin-bottom: 30px; font-size: 24px; color: #333;">Healthy Recipes</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto;">
+        <div style="background: #f9f9f9; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <div style="background: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=250&fit=crop') center/cover; height: 200px;"></div>
+            <div style="padding: 20px;">
+                <h4 style="color: #333; margin-bottom: 8px;">Protein Smoothie Bowl</h4>
+                <p style="color: #666; font-size: 14px; margin-bottom: 12px;">Quick and nutritious breakfast packed with protein and vitamins.</p>
+                <p style="color: #4CAF50; font-weight: bold; font-size: 14px;">⏱ 15 mins | 350 cal</p>
+            </div>
+        </div>
+        <div style="background: #f9f9f9; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <div style="background: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=250&fit=crop') center/cover; height: 200px;"></div>
+            <div style="padding: 20px;">
+                <h4 style="color: #333; margin-bottom: 8px;">Grilled Chicken Salad</h4>
+                <p style="color: #666; font-size: 14px; margin-bottom: 12px;">Lean protein with fresh vegetables for a healthy lunch.</p>
+                <p style="color: #4CAF50; font-weight: bold; font-size: 14px;">⏱ 20 mins | 450 cal</p>
+            </div>
+        </div>
+        <div style="background: #f9f9f9; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <div style="background: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=250&fit=crop') center/cover; height: 200px;"></div>
+            <div style="padding: 20px;">
+                <h4 style="color: #333; margin-bottom: 8px;">Quinoa Buddha Bowl</h4>
+                <p style="color: #666; font-size: 14px; margin-bottom: 12px;">Complete nutrition in one bowl with superfoods.</p>
+                <p style="color: #4CAF50; font-weight: bold; font-size: 14px;">⏱ 25 mins | 520 cal</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="padding: 40px 20px; background-color: #f0f0f0; margin-top: 40px;">
+    <h3 style="text-align: center; margin-bottom: 30px; font-size: 24px; color: #333;">Nutrition Tips</h3>
+    <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+        <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #4CAF50;">
+            <h4 style="color: #4CAF50; margin-bottom: 10px;">💧 Stay Hydrated</h4>
+            <p style="color: #666; font-size: 14px; line-height: 1.6;">Drink at least 8 glasses of water daily to boost metabolism and improve overall health.</p>
+        </div>
+        <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #4CAF50;">
+            <h4 style="color: #4CAF50; margin-bottom: 10px;">🥗 Eat Whole Foods</h4>
+            <p style="color: #666; font-size: 14px; line-height: 1.6;">Focus on whole grains, lean proteins, fruits, and vegetables instead of processed foods.</p>
+        </div>
+        <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #4CAF50;">
+            <h4 style="color: #4CAF50; margin-bottom: 10px;">⏰ Meal Timing</h4>
+            <p style="color: #666; font-size: 14px; line-height: 1.6;">Eat smaller meals throughout the day to maintain stable energy levels and metabolism.</p>
+        </div>
+    </div>
+</section>
+<section style="padding: 60px 20px; background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=600&fit=crop') center/cover no-repeat; position: relative;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6);"></div>
+    <div style="max-width: 600px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); position: relative; z-index: 1;">
+        <h2 style="text-align: center; color: #333; margin-bottom: 10px; font-size: 28px;">Join Our Community</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 30px; font-size: 16px;">Start your fitness journey today and transform your life!</p>
+        
+        <form id="signupForm" style="display: flex; flex-direction: column; gap: 15px;">
+            <div>
+                <label style="display: block; color: #333; margin-bottom: 8px; font-weight: bold;">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box; transition: 0.3s;" onfocus="this.style.borderColor='#4CAF50';" onblur="this.style.borderColor='#ddd';">
+            </div>
+            
+            <div>
+                <label style="display: block; color: #333; margin-bottom: 8px; font-weight: bold;">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box; transition: 0.3s;" onfocus="this.style.borderColor='#4CAF50';" onblur="this.style.borderColor='#ddd';">
+            </div>
+            
+            <div>
+                <label style="display: block; color: #333; margin-bottom: 8px; font-weight: bold;">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box; transition: 0.3s;" onfocus="this.style.borderColor='#4CAF50';" onblur="this.style.borderColor='#ddd';">
+            </div>
+            
+            <button type="submit" style="padding: 14px; background-color: #4CAF50; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s;" onmouseover="this.style.backgroundColor='#45a049';" onmouseout="this.style.backgroundColor='#4CAF50';">Sign Up Now</button>
+        </form>
+        
+        <p style="text-align: center; color: #666; margin-top: 20px; font-size: 14px;">Already have an account? <a href="#login" style="color: #4CAF50; text-decoration: none; font-weight: bold;">Login here</a></p>
+    </div>
+</section>
+
+<script>
+document.getElementById('signupForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const name = document.getElementById('name').value;
+    
+    if(email && name) {
+        localStorage.setItem('userEmail', email);
+        localStorage.setItem('userName', name);
+        window.location.href = 'welcome.html';
+    }
+});
+</script>
+
+
+
+<section style="padding: 40px 20px; background-color: #fff;">
+<footer style="background-color: #333; color: white; padding: 40px 20px; margin-top: 40px;">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
+        <div>
+            <h4 style="margin-bottom: 15px; font-size: 18px;">About Us</h4>
+            <p style="font-size: 14px; line-height: 1.6; color: #ccc;">Your fitness companion for achieving your health goals. Join thousands of members transforming their lives.</p>
+        </div>
+        <div>
+            <h4 style="margin-bottom: 15px; font-size: 18px;">Quick Links</h4>
+            <ul style="list-style: none;">
+                <li style="margin-bottom: 8px;"><a href="#home" style="color: #ccc; text-decoration: none; transition: 0.3s;">Home</a></li>
+                <li style="margin-bottom: 8px;"><a href="#about" style="color: #ccc; text-decoration: none; transition: 0.3s;">About</a></li>
+                <li style="margin-bottom: 8px;"><a href="#services" style="color: #ccc; text-decoration: none; transition: 0.3s;">Services</a></li>
+                <li style="margin-bottom: 8px;"><a href="#contact" style="color: #ccc; text-decoration: none; transition: 0.3s;">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 style="margin-bottom: 15px; font-size: 18px;">Support</h4>
+            <ul style="list-style: none;">
+                <li style="margin-bottom: 8px;"><a href="#faq" style="color: #ccc; text-decoration: none; transition: 0.3s;">FAQ</a></li>
+                <li style="margin-bottom: 8px;"><a href="#support" style="color: #ccc; text-decoration: none; transition: 0.3s;">Support</a></li>
+                <li style="margin-bottom: 8px;"><a href="#privacy" style="color: #ccc; text-decoration: none; transition: 0.3s;">Privacy Policy</a></li>
+                <li style="margin-bottom: 8px;"><a href="#terms" style="color: #ccc; text-decoration: none; transition: 0.3s;">Terms of Service</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 style="margin-bottom: 15px; font-size: 18px;">Contact Info</h4>
+            <p style="font-size: 14px; color: #ccc; margin-bottom: 8px;">Email: info@mywebsite.com</p>
+            <p style="font-size: 14px; color: #ccc; margin-bottom: 8px;">Phone: (555) 123-4567</p>
+            <p style="font-size: 14px; color: #ccc;">Address: 123 Fitness St, NYC, NY 10001</p>
+        </div>
+    </div>
+    <hr style="border: none; border-top: 1px solid #555; margin: 30px 0;">
+    <div style="text-align: center; font-size: 14px; color: #aaa;">
+        <p>&copy; 2024 MyWebsite. All rights reserved.</p>
+        <p style="margin-top: 10px;">Follow us: 
+            <a href="#" style="color: #4CAF50; text-decoration: none; margin: 0 5px;">Facebook</a> | 
+            <a href="#" style="color: #4CAF50; text-decoration: none; margin: 0 5px;">Twitter</a> | 
+            <a href="#" style="color: #4CAF50; text-decoration: none; margin: 0 5px;">Instagram</a>
+        </p>
+    </div>
+</footer>
+</body>
+</html>

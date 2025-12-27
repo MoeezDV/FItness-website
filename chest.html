@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chest Exercises | Fitness & Gym</title>
+
+<style>
+/* ===== THEME VARIABLES ===== */
+:root{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --text:#ffffff;
+  --sub:#cbd5f5;
+  --accent:#38bdf8;
+}
+
+#theme:checked ~ .page{
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#020617;
+  --sub:#334155;
+  --accent:#0284c7;
+}
+
+/* ===== BASE ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* ===== THEME TOGGLE ===== */
+.toggle{
+  position:fixed;
+  top:20px;
+  right:30px;
+  z-index:100;
+}
+
+.toggle label{
+  cursor:pointer;
+  padding:8px 14px;
+  background:var(--card);
+  border-radius:20px;
+  font-size:14px;
+  box-shadow:0 5px 10px rgba(0,0,0,.3);
+}
+
+/* ===== PAGE ===== */
+.page{
+  min-height:100vh;
+}
+
+.section{
+  padding:60px 10%;
+}
+
+h1{
+  text-align:center;
+  font-size:42px;
+  color:var(--accent);
+}
+
+.subtitle{
+  text-align:center;
+  margin:10px 0 40px;
+  color:var(--sub);
+}
+
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 20px rgba(0,0,0,.3);
+  transition:transform .3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  background:#000;
+}
+
+.card .content{
+  padding:20px;
+}
+
+.card h3{
+  color:var(--accent);
+  margin-bottom:8px;
+}
+
+.card p{
+  margin-bottom:5px;
+  color:var(--sub);
+}
+
+.tag{
+  display:inline-block;
+  margin-top:10px;
+  padding:5px 12px;
+  font-size:12px;
+  border-radius:20px;
+  background:rgba(56,189,248,.2);
+}
+</style>
+</head>
+
+<body>
+
+<!-- THEME TOGGLE -->
+<input type="checkbox" id="theme" hidden>
+<div class="toggle">
+  <label for="theme">🌙 / ☀️ Theme</label>
+</div>
+
+<div class="page">
+
+<!-- ===== CHEST PAGE ===== -->
+<section class="section">
+  <h1>Chest Exercises</h1>
+  <p class="subtitle">Build strength and muscle with chest workouts</p>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x250?text=Bench+Press+GIF" alt="">
+      <div class="content">
+        <h3>Barbell Bench Press</h3>
+        <p>Target: Middle Chest</p>
+        <p>Equipment: Barbell</p>
+        <span class="tag">Compound</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x250?text=Incline+Press+GIF" alt="">
+      <div class="content">
+        <h3>Incline Dumbbell Press</h3>
+        <p>Target: Upper Chest</p>
+        <p>Equipment: Dumbbells</p>
+        <span class="tag">Upper Chest</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x250?text=Cable+Fly+GIF" alt="">
+      <div class="content">
+        <h3>Cable Chest Fly</h3>
+        <p>Target: Inner Chest</p>
+        <p>Equipment: Cable</p>
+        <span class="tag">Isolation</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</div>
+</body>
+</html>
