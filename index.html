@@ -1,348 +1,1259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
-        
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 32px;
-            font-weight: bold;
-        }
-        
-        nav {
-            display: flex;
-            gap: 30px;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-        
-        nav a:hover {
-            color: #4CAF50;
-        }
-        
-        main {
-            padding: 40px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fitness Website</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f5f5f5;
+    overflow-x:hidden;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:#333;
+    color:white;
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    position:relative;
+    transition:0.3s;
+    font-size:16px;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:#4CAF50;
+    transition:0.4s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+nav a:hover{
+    color:#4CAF50;
+}
+
+/* ================= HERO ================= */
+
+main{
+    padding:40px;
+}
+
+.hero{
+    position:relative;
+    height:550px;
+    background:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=600&fit=crop') center/cover no-repeat;
+    border-radius:12px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+    position:relative;
+    z-index:1;
+    text-align:center;
+    color:white;
+    width:100%;
+    max-width:700px;
+    padding:20px;
+}
+
+.hero-content h2{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    margin-bottom:25px;
+    font-size:18px;
+    line-height:1.6;
+}
+
+.search-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.search-box input{
+    width:100%;
+    max-width:420px;
+    padding:14px 20px;
+    border:none;
+    border-radius:6px;
+    outline:none;
+    font-size:16px;
+}
+
+.search-box button{
+    padding:14px 30px;
+    border:none;
+    border-radius:6px;
+    background:#4CAF50;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:16px;
+}
+
+.search-box button:hover{
+    background:#45a049;
+}
+
+/* ================= GENERAL ================= */
+
+section{
+    padding:60px 20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:34px;
+    color:#333;
+    margin-bottom:40px;
+}
+
+/* ================= EXERCISES ================= */
+
+.exercise-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:30px;
+}
+
+.exercise-card{
+    text-decoration:none;
+    color:#333;
+}
+
+.exercise-image{
+    height:250px;
+    border-radius:12px;
+    background-size:cover;
+    background-position:center;
+    transition:0.4s;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.exercise-card:hover .exercise-image{
+    transform:translateY(-10px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.25);
+}
+
+.exercise-card p{
+    text-align:center;
+    margin-top:15px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* ================= FEATURES ================= */
+
+.features{
+    background:linear-gradient(135deg,#f5f5f5,#e8f5e9);
+}
+
+.feature-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.feature-box{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+    transition:0.4s;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.feature-box:hover{
+    transform:translateY(-10px);
+}
+
+.feature-box span{
+    font-size:50px;
+    display:block;
+    margin-bottom:15px;
+}
+
+/* ================= NUTRITION ================= */
+
+.nutrition{
+    background:white;
+}
+
+.nutrition-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.nutrition-card{
+    background:#fff;
+    border-radius:12px;
+    padding:25px;
+    transition:0.4s;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.nutrition-card:hover{
+    transform:translateY(-10px);
+}
+
+.nutrition-card h4{
+    margin-bottom:15px;
+    color:#4CAF50;
+    font-size:22px;
+}
+
+.nutrition-card p{
+    color:#666;
+    line-height:1.6;
+    margin-bottom:15px;
+}
+
+.nutrition-card ul{
+    list-style:none;
+    color:#555;
+}
+
+.nutrition-card ul li{
+    margin-bottom:8px;
+}
+
+.nutrition-card button{
+    width:100%;
+    margin-top:20px;
+    padding:12px;
+    border:none;
+    background:#4CAF50;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.nutrition-card button:hover{
+    background:#45a049;
+}
+
+/* ================= RECIPES ================= */
+
+.recipe-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.recipe-card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.recipe-card:hover{
+    transform:translateY(-10px);
+}
+
+.recipe-image{
+    height:220px;
+    background-size:cover;
+    background-position:center;
+}
+
+.recipe-content{
+    padding:20px;
+}
+
+.recipe-content h4{
+    margin-bottom:10px;
+}
+
+.recipe-content p{
+    color:#666;
+    line-height:1.6;
+}
+
+/* ================= TIPS ================= */
+
+.tips{
+    background:#f0f0f0;
+}
+
+.tips-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.tip-card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    border-left:5px solid #4CAF50;
+}
+
+.tip-card h4{
+    margin-bottom:10px;
+    color:#4CAF50;
+}
+
+.tip-card p{
+    color:#666;
+    line-height:1.6;
+}
+
+/* ================= SIGNUP ================= */
+
+.signup{
+    position:relative;
+    background:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=600&fit=crop') center/cover no-repeat;
+}
+
+.signup::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+}
+
+.signup-box{
+    position:relative;
+    z-index:1;
+    max-width:600px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:12px;
+}
+
+.signup-box h2{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.signup-box p{
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+form input{
+    width:100%;
+    padding:14px;
+    border:2px solid #ddd;
+    border-radius:6px;
+    outline:none;
+}
+
+form input:focus{
+    border-color:#4CAF50;
+}
+
+form button{
+    padding:14px;
+    border:none;
+    background:#4CAF50;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+form button:hover{
+    background:#45a049;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#333;
+    color:white;
+    padding:50px 20px;
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+footer h4{
+    margin-bottom:15px;
+}
+
+footer p,
+footer a{
+    color:#ccc;
+    text-decoration:none;
+    line-height:1.8;
+}
+
+footer a:hover{
+    color:#4CAF50;
+}
+
+.copyright{
+    text-align:center;
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid #555;
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:992px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+        text-align:center;
+    }
+
+    nav{
+        gap:15px;
+    }
+
+    .hero-content h2{
+        font-size:38px;
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+    main{
+        padding:20px;
+    }
+
+    .logo{
+        font-size:26px;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    .hero{
+        height:450px;
+    }
+
+    .hero-content h2{
+        font-size:30px;
+    }
+
+    .hero-content p{
+        font-size:15px;
+    }
+
+    .section-title{
+        font-size:28px;
+    }
+
+    .signup-box{
+        padding:25px;
+    }
+
+    footer{
+        text-align:center;
+    }
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:480px){
+
+    header{
+        padding:15px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    nav{
+        gap:10px;
+    }
+
+    .hero-content h2{
+        font-size:24px;
+    }
+
+    .search-box button{
+        width:100%;
+    }
+
+    .exercise-image{
+        height:200px;
+    }
+
+    .signup-box{
+        padding:20px;
+    }
+
+    .section-title{
+        font-size:24px;
+    }
+
+}
+
+.recipes-section{
+    padding:60px 20px;
+    background:#fff;
+}
+
+.recipe-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.recipe-box{
+    background:#f9f9f9;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.recipe-box:hover{
+    transform:translateY(-10px);
+}
+
+.recipe-image{
+    height:240px;
+    background-size:cover;
+    background-position:center;
+}
+
+.recipe-content{
+    padding:20px;
+}
+
+.recipe-content h3{
+    margin-bottom:10px;
+    color:#333;
+}
+
+.recipe-content p{
+    color:#666;
+    line-height:1.6;
+}
+
+.recipe-btn{
+    margin-top:15px;
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    background:#4CAF50;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.recipe-btn:hover{
+    background:#45a049;
+}
+
+.recipe-details{
+    margin-top:20px;
+    display:none;
+    animation:dropDown 0.4s ease;
+}
+
+.recipe-details h4{
+    margin-bottom:10px;
+    color:#333;
+}
+
+.recipe-details ul{
+    margin-bottom:15px;
+    padding-left:20px;
+    color:#555;
+}
+
+.recipe-details p{
+    color:#666;
+    line-height:1.6;
+}
+
+@keyframes dropDown{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+@media(max-width:768px){
+
+    .recipe-image{
+        height:200px;
+    }
+
+}    
+
+.recipe-details{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:
+    max-height 0.5s ease,
+    opacity 0.4s ease,
+    margin-top 0.4s ease;
+
+    margin-top:0;
+}
+
+.recipe-details.show{
+    max-height:500px;
+    opacity:1;
+    margin-top:20px;
+}
+
+
+</style>
 </head>
+
 <body>
-    <header>
-        <div class="logo">MyWebsite</div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-            <a href="#blog">Blog</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#team">Team</a>
-            <a href="#faq">FAQ</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#support">Support</a>
-        </nav>
-    </header>
-    <main>
-        <section style="position: relative; height: 500px; background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=500&fit=crop') center/cover no-repeat; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-            <div style="background: rgba(0, 0, 0, 0.5); padding: 30px; border-radius: 8px; text-align: center;">
-                <h2 style="color: white; margin-bottom: 20px; font-size: 28px;">Find Your Fitness</h2>
-                <input type="text" placeholder="Search for classes, trainers, or programs..." style="width: 350px; padding: 12px 20px; font-size: 16px; border: none; border-radius: 5px; outline: none;">
-                <button style="padding: 12px 30px; margin-left: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: 0.3s;">Search</button>
-            </div>
-        </section>
-    </main>
-    
-</body>
-<section style="padding: 40px 20px; background-color: white;">
-    <h3 style="text-align: center; margin-bottom: 40px; font-size: 24px; color: #333;">Popular Exercises</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
-        <a href="chest.html" style="text-decoration: none;">
-            <div style="background: url('https://www.simplefitnesshub.com/wp-content/uploads/2018/06/best_chest_workout_at_home_001-1024x683.jpg') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
-            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Chest</p>
-        </a>
-        <a href="back.html" style="text-decoration: none;">
-            <div style="background: url('https://imgcdn.stablediffusionweb.com/2025/1/4/4d7e24d5-c0c7-451c-8b86-a39c2cbc3d1b.jpg') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
-            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Back</p>
-        </a>
-        <a href="shoulder.html" style="text-decoration: none;">
-            <div style="background: url('https://fitnessfit.com.au/wp-content/uploads/2022/10/Muscle-include-in-shoulder-workout.jpg') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
-            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Shoulder</p>
-        </a>
-        <a href="#bicep" style="text-decoration: none;">
-            <div style="background: url('https://thumbs.dreamstime.com/b/focused-muscular-young-man-doing-bicep-curl-tranquil-concentrated-male-athlete-raising-dumbbell-one-hand-seated-position-239069847.jpg') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
-            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Bicep</p>
-        </a>
-        <a href="#triceps" style="text-decoration: none;">
-            <div style="background: url('https://staticg.sportskeeda.com/editor/2022/07/dec81-16580627015252-1920.jpg') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
-            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Triceps</p>
-        </a>
-        <a href="legs.html" style="text-decoration: none;">
-            <div style="background: url('https://cdn.shopify.com/s/files/1/0504/5357/7879/files/CBHTBM-Legs.png?v=1716368126') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
-            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Legs</p>
-        </a>
-        <a href="#abs" style="text-decoration: none;">
-            <div style="background: url('https://i.pinimg.com/originals/c9/dd/3b/c9dd3bc26e74f2ecdbcd260e62615e87.png') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
-            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Abs</p>
-        </a>
-        <a href="#cardio" style="text-decoration: none;">
-            <div style="background: url('https://c.stocksy.com/a/sDhF00/z9/3741072.jpg') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
-            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Cardio</p>
-        </a>
-        <a href="#yoga" style="text-decoration: none;">
-            <div style="background: url('https://static.vecteezy.com/system/resources/previews/013/504/703/large_2x/totally-relaxed-young-man-doing-yoga-while-sitting-in-lotus-position-at-home-photo.jpg') center/cover; height: 250px; border-radius: 8px; transition: transform 0.3s ease; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"></div>
-            <p style="text-align: center; margin-top: 15px; color: #333; font-weight: bold; font-size: 18px;">Yoga</p>
-        </a>
-    </div>
-</section>
-<section style="padding: 40px 20px; background: linear-gradient(135deg, #f5f5f5 0%, #e8f5e9 100%);">
-    <div style="max-width: 1200px; margin: 0 auto; text-align: center; padding: 20px 0;">
-        <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 250px;">
-                <div style="font-size: 48px; margin-bottom: 15px;">📊</div>
-                <h3 style="color: #333; margin-bottom: 10px;">Transform Your Body</h3>
-                <p style="color: #666; font-size: 16px;">See real results with science-backed nutrition</p>
-            </div>
-            <div style="flex: 1; min-width: 250px;">
-                <div style="font-size: 48px; margin-bottom: 15px;">⭐</div>
-                <h3 style="color: #333; margin-bottom: 10px;">Expert Plans</h3>
-                <p style="color: #666; font-size: 16px;">Created by certified nutritionists</p>
-            </div>
-            <div style="flex: 1; min-width: 250px;">
-                <div style="font-size: 48px; margin-bottom: 15px;">🎯</div>
-                <h3 style="color: #333; margin-bottom: 10px;">Personalized Approach</h3>
-                <p style="color: #666; font-size: 16px;">Tailored to your unique fitness goals</p>
-            </div>
-        </div>
-    </div>
-    <h3 style="text-align: center; margin-bottom: 40px; font-size: 24px; color: #333;">Nutrition & Diet Plans</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
-        <div style="background: linear-gradient(135deg, #ffffff 0%, #f1f8f6 100%); border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; border-top: 4px solid #4CAF50;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
-            <h4 style="color: #4CAF50; margin-bottom: 12px; font-size: 20px;">🥗 Balanced Diet</h4>
-            <p style="color: #666; margin-bottom: 15px; line-height: 1.6;">Complete nutrition plan with proper carbs, proteins, and fats for optimal health and energy.</p>
-            <ul style="list-style: none; color: #555; font-size: 14px;">
-                <li style="margin-bottom: 8px;">✓ Calorie tracking</li>
-                <li style="margin-bottom: 8px;">✓ Meal prep guides</li>
-                <li style="margin-bottom: 8px;">✓ Weekly menus</li>
-                <li style="margin-bottom: 8px;">✓ Shopping lists</li>
-            </ul>
-            <button style="width: 100%; padding: 12px; margin-top: 15px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;" onmouseover="this.style.backgroundColor='#45a049';" onmouseout="this.style.backgroundColor='#4CAF50';">Learn More</button>
-        </div>
-        <div style="background: linear-gradient(135deg, #ffffff 0%, #fff3e0 100%); border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; border-top: 4px solid #FF9800;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
-            <h4 style="color: #FF9800; margin-bottom: 12px; font-size: 20px;">⚡ Weight Loss Plan</h4>
-            <p style="color: #666; margin-bottom: 15px; line-height: 1.6;">Healthy calorie deficit diet designed to help you lose weight safely and sustainably.</p>
-            <ul style="list-style: none; color: #555; font-size: 14px;">
-                <li style="margin-bottom: 8px;">✓ Low-calorie recipes</li>
-                <li style="margin-bottom: 8px;">✓ Progress tracking</li>
-                <li style="margin-bottom: 8px;">✓ Expert guidance</li>
-                <li style="margin-bottom: 8px;">✓ Support community</li>
-            </ul>
-            <button style="width: 100%; padding: 12px; margin-top: 15px; background-color: #FF9800; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;" onmouseover="this.style.backgroundColor='#e68900';" onmouseout="this.style.backgroundColor='#FF9800';">Learn More</button>
-        </div>
-        <div style="background: linear-gradient(135deg, #ffffff 0%, #f3e5f5 100%); border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; border-top: 4px solid #9C27B0;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
-            <h4 style="color: #9C27B0; margin-bottom: 12px; font-size: 20px;">💪 Muscle Building</h4>
-            <p style="color: #666; margin-bottom: 15px; line-height: 1.6;">High-protein nutrition plans designed to maximize muscle growth and strength gains.</p>
-            <ul style="list-style: none; color: #555; font-size: 14px;">
-                <li style="margin-bottom: 8px;">✓ High-protein meals</li>
-                <li style="margin-bottom: 8px;">✓ Supplement guides</li>
-                <li style="margin-bottom: 8px;">✓ Pre/post workouts</li>
-                <li style="margin-bottom: 8px;">✓ Macro calculator</li>
-            </ul>
-            <button style="width: 100%; padding: 12px; margin-top: 15px; background-color: #9C27B0; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;" onmouseover="this.style.backgroundColor='#7b1fa2';" onmouseout="this.style.backgroundColor='#9C27B0';">Learn More</button>
-        </div>
-        <div style="background: linear-gradient(135deg, #ffffff 0%, #e8f5e9 100%); border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; border-top: 4px solid #00BCD4;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
-            <h4 style="color: #00BCD4; margin-bottom: 12px; font-size: 20px;">🌿 Vegan & Vegetarian</h4>
-            <p style="color: #666; margin-bottom: 15px; line-height: 1.6;">Plant-based nutrition plans with all essential nutrients for a healthy lifestyle.</p>
-            <ul style="list-style: none; color: #555; font-size: 14px;">
-                <li style="margin-bottom: 8px;">✓ Plant-based recipes</li>
-                <li style="margin-bottom: 8px;">✓ Protein sources</li>
-                <li style="margin-bottom: 8px;">✓ Nutrient tracking</li>
-                <li style="margin-bottom: 8px;">✓ Meal planning</li>
-            </ul>
-            <button style="width: 100%; padding: 12px; margin-top: 15px; background-color: #00BCD4; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;" onmouseover="this.style.backgroundColor='#0097a7';" onmouseout="this.style.backgroundColor='#00BCD4';">Learn More</button>
-        </div>
-        <div style="background: linear-gradient(135deg, #ffffff 0%, #fce4ec 100%); border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; border-top: 4px solid #E91E63;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
-            <h4 style="color: #E91E63; margin-bottom: 12px; font-size: 20px;">🔥 Keto Diet</h4>
-            <p style="color: #666; margin-bottom: 15px; line-height: 1.6;">Low-carb ketogenic diet plan for rapid fat loss and improved mental clarity.</p>
-            <ul style="list-style: none; color: #555; font-size: 14px;">
-                <li style="margin-bottom: 8px;">✓ Keto recipes</li>
-                <li style="margin-bottom: 8px;">✓ Macro calculations</li>
-                <li style="margin-bottom: 8px;">✓ Food list guide</li>
-                <li style="margin-bottom: 8px;">✓ Ketone tracking</li>
-            </ul>
-            <button style="width: 100%; padding: 12px; margin-top: 15px; background-color: #E91E63; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;" onmouseover="this.style.backgroundColor='#c2185b';" onmouseout="this.style.backgroundColor='#E91E63';">Learn More</button>
-        </div>
-        <div style="background: linear-gradient(135deg, #ffffff 0%, #ede7f6 100%); border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; border-top: 4px solid #673AB7;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 8px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';">
-            <h4 style="color: #673AB7; margin-bottom: 12px; font-size: 20px;">👨‍⚕️ Consult Nutritionist</h4>
-            <p style="color: #666; margin-bottom: 15px; line-height: 1.6;">Get personalized diet plans from certified nutritionists tailored to your health goals.</p>
-            <ul style="list-style: none; color: #555; font-size: 14px;">
-                <li style="margin-bottom: 8px;">✓ One-on-one sessions</li>
-                <li style="margin-bottom: 8px;">✓ Custom meal plans</li>
-                <li style="margin-bottom: 8px;">✓ Health assessment</li>
-                <li style="margin-bottom: 8px;">✓ Ongoing support</li>
-            </ul>
-            <button style="width: 100%; padding: 12px; margin-top: 15px; background-color: #673AB7; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.3s;" onmouseover="this.style.backgroundColor='#512da8';" onmouseout="this.style.backgroundColor='#673AB7';">Book Now</button>
-        </div>
-    </div>
+
+<header>
+
+<div class="logo">FitZone</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Gallery</a>
+<a href="#">Team</a>
+<a href="#">Pricing</a>
+<a href="#">Contact</a>
+</nav>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h2>Find Your Fitness</h2>
+
+<p>
+Discover workouts, nutrition plans, and fitness programs
+designed to transform your body and lifestyle.
+</p>
+
+<div class="search-box">
+
+<input type="text"
+placeholder="Search for classes, trainers or programs..." />
+
+<button>Search</button>
+
+</div>
+
+</div>
+
 </section>
 
-<section style="padding: 40px 20px; background-color: white; margin-top: 40px;">
-    <h3 style="text-align: center; margin-bottom: 30px; font-size: 24px; color: #333;">Healthy Recipes</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto;">
-        <div style="background: #f9f9f9; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            <div style="background: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=250&fit=crop') center/cover; height: 200px;"></div>
-            <div style="padding: 20px;">
-                <h4 style="color: #333; margin-bottom: 8px;">Protein Smoothie Bowl</h4>
-                <p style="color: #666; font-size: 14px; margin-bottom: 12px;">Quick and nutritious breakfast packed with protein and vitamins.</p>
-                <p style="color: #4CAF50; font-weight: bold; font-size: 14px;">⏱ 15 mins | 350 cal</p>
-            </div>
-        </div>
-        <div style="background: #f9f9f9; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            <div style="background: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=250&fit=crop') center/cover; height: 200px;"></div>
-            <div style="padding: 20px;">
-                <h4 style="color: #333; margin-bottom: 8px;">Grilled Chicken Salad</h4>
-                <p style="color: #666; font-size: 14px; margin-bottom: 12px;">Lean protein with fresh vegetables for a healthy lunch.</p>
-                <p style="color: #4CAF50; font-weight: bold; font-size: 14px;">⏱ 20 mins | 450 cal</p>
-            </div>
-        </div>
-        <div style="background: #f9f9f9; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            <div style="background: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=250&fit=crop') center/cover; height: 200px;"></div>
-            <div style="padding: 20px;">
-                <h4 style="color: #333; margin-bottom: 8px;">Quinoa Buddha Bowl</h4>
-                <p style="color: #666; font-size: 14px; margin-bottom: 12px;">Complete nutrition in one bowl with superfoods.</p>
-                <p style="color: #4CAF50; font-weight: bold; font-size: 14px;">⏱ 25 mins | 520 cal</p>
-            </div>
-        </div>
-    </div>
+</main>
+
+<!-- EXERCISES -->
+
+<section>
+
+<h2 class="section-title">Popular Exercises</h2>
+
+<div class="exercise-grid">
+
+<a href="#" class="exercise-card">
+<div class="exercise-image"
+style="background-image:url('chest.jpg')">
+</div>
+<p>Chest</p>
+</a>
+
+<a href="#" class="exercise-card">
+<div class="exercise-image"
+style="background-image:url('https://imgcdn.stablediffusionweb.com/2025/1/4/4d7e24d5-c0c7-451c-8b86-a39c2cbc3d1b.jpg')">
+</div>
+<p>Back</p>
+</a>
+
+<a href="#" class="exercise-card">
+<div class="exercise-image"
+style="background-image:url('https://fitnessfit.com.au/wp-content/uploads/2022/10/Muscle-include-in-shoulder-workout.jpg')">
+</div>
+<p>Shoulders</p>
+</a>
+
+<a href="#" class="exercise-card">
+<div class="exercise-image"
+style="background-image:url('https://thumbs.dreamstime.com/b/focused-muscular-young-man-doing-bicep-curl-tranquil-concentrated-male-athlete-raising-dumbbell-one-hand-seated-position-239069847.jpg')">
+</div>
+<p>Biceps</p>
+</a>
+
+<a href="#" class="exercise-card">
+<div class="exercise-image"
+style="background-image:url('https://staticg.sportskeeda.com/editor/2022/07/dec81-16580627015252-1920.jpg')">
+</div>
+<p>Triceps</p>
+</a>
+
+<a href="#" class="exercise-card">
+<div class="exercise-image"
+style="background-image:url('https://cdn.shopify.com/s/files/1/0504/5357/7879/files/CBHTBM-Legs.png?v=1716368126')">
+</div>
+<p>Legs</p>
+</a>
+
+<a href="#" class="exercise-card">
+<div class="exercise-image"
+style="background-image:url('https://i.pinimg.com/originals/c9/dd/3b/c9dd3bc26e74f2ecdbcd260e62615e87.png')">
+</div>
+<p>Abs</p>
+</a>
+
+<a href="#" class="exercise-card">
+<div class="exercise-image"
+style="background-image:url('https://c.stocksy.com/a/sDhF00/z9/3741072.jpg')">
+</div>
+<p>Cardio</p>
+</a>
+
+</div>
+
 </section>
 
-<section style="padding: 40px 20px; background-color: #f0f0f0; margin-top: 40px;">
-    <h3 style="text-align: center; margin-bottom: 30px; font-size: 24px; color: #333;">Nutrition Tips</h3>
-    <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-        <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #4CAF50;">
-            <h4 style="color: #4CAF50; margin-bottom: 10px;">💧 Stay Hydrated</h4>
-            <p style="color: #666; font-size: 14px; line-height: 1.6;">Drink at least 8 glasses of water daily to boost metabolism and improve overall health.</p>
-        </div>
-        <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #4CAF50;">
-            <h4 style="color: #4CAF50; margin-bottom: 10px;">🥗 Eat Whole Foods</h4>
-            <p style="color: #666; font-size: 14px; line-height: 1.6;">Focus on whole grains, lean proteins, fruits, and vegetables instead of processed foods.</p>
-        </div>
-        <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #4CAF50;">
-            <h4 style="color: #4CAF50; margin-bottom: 10px;">⏰ Meal Timing</h4>
-            <p style="color: #666; font-size: 14px; line-height: 1.6;">Eat smaller meals throughout the day to maintain stable energy levels and metabolism.</p>
-        </div>
-    </div>
+<!-- FEATURES -->
+
+<section class="features">
+
+<h2 class="section-title">Why Choose Us</h2>
+
+<div class="feature-grid">
+
+<div class="feature-box">
+<span>📊</span>
+<h3>Transform Your Body</h3>
+<p>Get real results with expert-designed plans.</p>
+</div>
+
+<div class="feature-box">
+<span>⭐</span>
+<h3>Expert Plans</h3>
+<p>Programs built by certified fitness coaches.</p>
+</div>
+
+<div class="feature-box">
+<span>🎯</span>
+<h3>Personalized Goals</h3>
+<p>Customized fitness plans for your journey.</p>
+</div>
+
+</div>
+
 </section>
-<section style="padding: 60px 20px; background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=600&fit=crop') center/cover no-repeat; position: relative;">
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6);"></div>
-    <div style="max-width: 600px; margin: 0 auto; background: white; border-radius: 12px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); position: relative; z-index: 1;">
-        <h2 style="text-align: center; color: #333; margin-bottom: 10px; font-size: 28px;">Join Our Community</h2>
-        <p style="text-align: center; color: #666; margin-bottom: 30px; font-size: 16px;">Start your fitness journey today and transform your life!</p>
-        
-        <form id="signupForm" style="display: flex; flex-direction: column; gap: 15px;">
-            <div>
-                <label style="display: block; color: #333; margin-bottom: 8px; font-weight: bold;">Full Name</label>
-                <input type="text" id="name" placeholder="Enter your full name" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box; transition: 0.3s;" onfocus="this.style.borderColor='#4CAF50';" onblur="this.style.borderColor='#ddd';">
-            </div>
-            
-            <div>
-                <label style="display: block; color: #333; margin-bottom: 8px; font-weight: bold;">Email Address</label>
-                <input type="email" id="email" placeholder="Enter your email" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box; transition: 0.3s;" onfocus="this.style.borderColor='#4CAF50';" onblur="this.style.borderColor='#ddd';">
-            </div>
-            
-            <div>
-                <label style="display: block; color: #333; margin-bottom: 8px; font-weight: bold;">Password</label>
-                <input type="password" id="password" placeholder="Enter your password" required style="width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box; transition: 0.3s;" onfocus="this.style.borderColor='#4CAF50';" onblur="this.style.borderColor='#ddd';">
-            </div>
-            
-            <button type="submit" style="padding: 14px; background-color: #4CAF50; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s;" onmouseover="this.style.backgroundColor='#45a049';" onmouseout="this.style.backgroundColor='#4CAF50';">Sign Up Now</button>
-        </form>
-        
-        <p style="text-align: center; color: #666; margin-top: 20px; font-size: 14px;">Already have an account? <a href="#login" style="color: #4CAF50; text-decoration: none; font-weight: bold;">Login here</a></p>
-    </div>
+
+<!-- NUTRITION -->
+
+<section class="nutrition">
+
+<h2 class="section-title">Nutrition Plans</h2>
+
+<div class="nutrition-grid">
+
+<div class="nutrition-card">
+<h4>🥗 Balanced Diet</h4>
+<p>Healthy nutrition plans for better energy and wellness.</p>
+
+<ul>
+<li>✓ Meal Planning</li>
+<li>✓ Calorie Tracking</li>
+<li>✓ Weekly Menus</li>
+<li>✓ Shopping Lists</li>
+</ul>
+
+<button>Learn More</button>
+</div>
+
+<div class="nutrition-card">
+<h4>⚡ Weight Loss</h4>
+<p>Safe and effective fat-loss nutrition plans.</p>
+
+<ul>
+<li>✓ Fat Burning Meals</li>
+<li>✓ Expert Guidance</li>
+<li>✓ Progress Tracking</li>
+<li>✓ Support Community</li>
+</ul>
+
+<button>Learn More</button>
+</div>
+
+<div class="nutrition-card">
+<h4>💪 Muscle Building</h4>
+<p>High-protein diets for muscle growth and recovery.</p>
+
+<ul>
+<li>✓ Protein Meals</li>
+<li>✓ Supplement Guides</li>
+<li>✓ Macro Tracking</li>
+<li>✓ Recovery Foods</li>
+</ul>
+
+<button>Learn More</button>
+</div>
+<div class="nutrition-card">
+    <h4>🌿 Vegan Diet</h4>
+
+    <p>
+        Plant-based nutrition plans packed with essential vitamins,
+        minerals, and healthy protein sources.
+    </p>
+
+    <ul>
+        <li>✓ Plant Protein Meals</li>
+        <li>✓ Vegan Recipes</li>
+        <li>✓ Nutrient Tracking</li>
+        <li>✓ Meal Planning</li>
+    </ul>
+
+    <button>Learn More</button>
+</div>
+
+
+<div class="nutrition-card">
+<h4>🔥 Keto Diet</h4>
+<p>Low-carb meal plans for rapid fat burning.</p>
+
+<ul>
+<li>✓ Keto Recipes</li>
+<li>✓ Food Guides</li>
+<li>✓ Macro Calculator</li>
+<li>✓ Weight Tracking</li>
+</ul>
+
+<button>Learn More</button>
+</div>
+
+<div class="nutrition-card">
+    <h4>🏃 Athletic Performance</h4>
+
+    <p>
+        Performance-focused nutrition designed to improve stamina,
+        endurance, and workout recovery.
+    </p>
+
+    <ul>
+        <li>✓ Energy Boost Meals</li>
+        <li>✓ Recovery Nutrition</li>
+        <li>✓ Hydration Plans</li>
+        <li>✓ Pre/Post Workout Meals</li>
+    </ul>
+
+    <button>Learn More</button>
+</div>
+
+</div>
+
 </section>
+
+<!-- RECIPES -->
+
+<section>
+
+
+<section class="recipes-section">
+
+    <h2 class="section-title">Healthy Recipes</h2>
+
+    <div class="recipe-container">
+
+        <!-- Recipe 1 -->
+
+        <div class="recipe-box">
+
+            <div class="recipe-image"
+            style="background-image:url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600');">
+            </div>
+
+            <div class="recipe-content">
+
+                <h3>Protein Smoothie Bowl</h3>
+
+                <p>
+                    A healthy breakfast packed with protein,
+                    fruits and nutrients for energy.
+                </p>
+
+                <button class="recipe-btn"
+                onclick="toggleRecipe('recipe1')">
+
+                    View Recipe
+
+                </button>
+
+                <div class="recipe-details" id="recipe1">
+
+                    <h4>Ingredients:</h4>
+
+                    <ul>
+                        <li>1 Banana</li>
+                        <li>1 Cup Milk</li>
+                        <li>1 Scoop Protein Powder</li>
+                        <li>Mixed Berries</li>
+                        <li>Oats</li>
+                    </ul>
+
+                    <h4>Recipe:</h4>
+
+                    <p>
+                        Blend banana, milk and protein powder.
+                        Pour into a bowl and top with berries,
+                        oats and nuts. Serve chilled.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Recipe 2 -->
+
+        <div class="recipe-box">
+
+            <div class="recipe-image"
+            style="background-image:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600');">
+            </div>
+
+            <div class="recipe-content">
+
+                <h3>Grilled Chicken Salad</h3>
+
+                <p>
+                    High-protein salad perfect for lunch
+                    and muscle recovery.
+                </p>
+
+                <button class="recipe-btn"
+                onclick="toggleRecipe('recipe2')">
+
+                    View Recipe
+
+                </button>
+
+                <div class="recipe-details" id="recipe2">
+
+                    <h4>Ingredients:</h4>
+
+                    <ul>
+                        <li>Grilled Chicken</li>
+                        <li>Lettuce</li>
+                        <li>Tomatoes</li>
+                        <li>Cucumber</li>
+                        <li>Olive Oil</li>
+                    </ul>
+
+                    <h4>Recipe:</h4>
+
+                    <p>
+                        Grill the chicken with light seasoning.
+                        Mix vegetables in a bowl and place sliced
+                        chicken on top. Add olive oil dressing.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Recipe 3 -->
+
+        <div class="recipe-box">
+
+            <div class="recipe-image"
+            style="background-image:url('https://images.unsplash.com/photo-1505253716362-afaea6d3d1af?w=600');">
+            </div>
+
+            <div class="recipe-content">
+
+                <h3>Quinoa Buddha Bowl</h3>
+
+                <p>
+                    A complete healthy meal with grains,
+                    vegetables and healthy fats.
+                </p>
+
+                <button class="recipe-btn"
+                onclick="toggleRecipe('recipe3')">
+
+                    View Recipe
+
+                </button>
+
+                <div class="recipe-details" id="recipe3">
+
+                    <h4>Ingredients:</h4>
+
+                    <ul>
+                        <li>Cooked Quinoa</li>
+                        <li>Avocado</li>
+                        <li>Broccoli</li>
+                        <li>Carrots</li>
+                        <li>Boiled Chickpeas</li>
+                    </ul>
+
+                    <h4>Recipe:</h4>
+
+                    <p>
+                        Add quinoa to a bowl and top with
+                        vegetables, avocado and chickpeas.
+                        Drizzle with lemon dressing.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- TIPS -->
+
+<section class="tips">
+
+<h2 class="section-title">Nutrition Tips</h2>
+
+<div class="tips-grid">
+
+<div class="tip-card">
+<h4>💧 Stay Hydrated</h4>
+<p>Drink enough water daily to improve metabolism.</p>
+</div>
+
+<div class="tip-card">
+<h4>🥗 Eat Whole Foods</h4>
+<p>Choose fresh and healthy foods over processed meals.</p>
+</div>
+
+<div class="tip-card">
+<h4>⏰ Meal Timing</h4>
+<p>Eat balanced meals throughout the day for better energy.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SIGNUP -->
+
+<section class="signup">
+
+<div class="signup-box">
+
+<h2>Join Our Community</h2>
+
+<p>Start your fitness journey today!</p>
+
+<form id="signupForm">
+
+<input type="text" id="name" placeholder="Full Name" required>
+
+<input type="email" id="email" placeholder="Email Address" required>
+
+<input type="password" id="password" placeholder="Password" required>
+
+<button type="submit">Sign Up Now</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h4>About Us</h4>
+<p>
+Your fitness companion helping people transform
+their lives through fitness and nutrition.
+</p>
+</div>
+
+<div>
+<h4>Quick Links</h4>
+
+<p><a href="#">Home</a></p>
+<p><a href="#">About</a></p>
+<p><a href="#">Services</a></p>
+<p><a href="#">Contact</a></p>
+</div>
+
+<div>
+<h4>Support</h4>
+
+<p><a href="#">FAQ</a></p>
+<p><a href="#">Privacy Policy</a></p>
+<p><a href="#">Terms & Conditions</a></p>
+</div>
+
+<div>
+<h4>Contact</h4>
+
+<p>Email: info@fitzone.com</p>
+<p>Phone: +1 234 567 890</p>
+<p>Address: New York, USA</p>
+
+</div>
+
+</div>
+
+<div class="copyright">
+<p>© 2026 FitZone. All Rights Reserved.</p>
+</div>
+
+</footer>
 
 <script>
-document.getElementById('signupForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = document.getElementById('email').value;
-    const name = document.getElementById('name').value;
-    
-    if(email && name) {
-        localStorage.setItem('userEmail', email);
-        localStorage.setItem('userName', name);
-        window.location.href = 'welcome.html';
-    }
+
+document.getElementById('signupForm').addEventListener('submit', function(e){
+
+e.preventDefault();
+
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+
+localStorage.setItem('userName', name);
+localStorage.setItem('userEmail', email);
+
+alert('Signup Successful!');
+
 });
+
+
+function toggleRecipe(id){
+
+    const recipe = document.getElementById(id);
+
+    if(recipe.classList.contains("show")){
+
+        recipe.classList.remove("show");
+
+    }else{
+
+        recipe.classList.add("show");
+
+    }
+
+}
+
 </script>
 
-
-
-<section style="padding: 40px 20px; background-color: #fff;">
-<footer style="background-color: #333; color: white; padding: 40px 20px; margin-top: 40px;">
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
-        <div>
-            <h4 style="margin-bottom: 15px; font-size: 18px;">About Us</h4>
-            <p style="font-size: 14px; line-height: 1.6; color: #ccc;">Your fitness companion for achieving your health goals. Join thousands of members transforming their lives.</p>
-        </div>
-        <div>
-            <h4 style="margin-bottom: 15px; font-size: 18px;">Quick Links</h4>
-            <ul style="list-style: none;">
-                <li style="margin-bottom: 8px;"><a href="#home" style="color: #ccc; text-decoration: none; transition: 0.3s;">Home</a></li>
-                <li style="margin-bottom: 8px;"><a href="#about" style="color: #ccc; text-decoration: none; transition: 0.3s;">About</a></li>
-                <li style="margin-bottom: 8px;"><a href="#services" style="color: #ccc; text-decoration: none; transition: 0.3s;">Services</a></li>
-                <li style="margin-bottom: 8px;"><a href="#contact" style="color: #ccc; text-decoration: none; transition: 0.3s;">Contact</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4 style="margin-bottom: 15px; font-size: 18px;">Support</h4>
-            <ul style="list-style: none;">
-                <li style="margin-bottom: 8px;"><a href="#faq" style="color: #ccc; text-decoration: none; transition: 0.3s;">FAQ</a></li>
-                <li style="margin-bottom: 8px;"><a href="#support" style="color: #ccc; text-decoration: none; transition: 0.3s;">Support</a></li>
-                <li style="margin-bottom: 8px;"><a href="#privacy" style="color: #ccc; text-decoration: none; transition: 0.3s;">Privacy Policy</a></li>
-                <li style="margin-bottom: 8px;"><a href="#terms" style="color: #ccc; text-decoration: none; transition: 0.3s;">Terms of Service</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4 style="margin-bottom: 15px; font-size: 18px;">Contact Info</h4>
-            <p style="font-size: 14px; color: #ccc; margin-bottom: 8px;">Email: info@mywebsite.com</p>
-            <p style="font-size: 14px; color: #ccc; margin-bottom: 8px;">Phone: (555) 123-4567</p>
-            <p style="font-size: 14px; color: #ccc;">Address: 123 Fitness St, NYC, NY 10001</p>
-        </div>
-    </div>
-    <hr style="border: none; border-top: 1px solid #555; margin: 30px 0;">
-    <div style="text-align: center; font-size: 14px; color: #aaa;">
-        <p>&copy; 2024 MyWebsite. All rights reserved.</p>
-        <p style="margin-top: 10px;">Follow us: 
-            <a href="#" style="color: #4CAF50; text-decoration: none; margin: 0 5px;">Facebook</a> | 
-            <a href="#" style="color: #4CAF50; text-decoration: none; margin: 0 5px;">Twitter</a> | 
-            <a href="#" style="color: #4CAF50; text-decoration: none; margin: 0 5px;">Instagram</a>
-        </p>
-    </div>
-</footer>
 </body>
 </html>
